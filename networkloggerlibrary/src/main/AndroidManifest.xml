@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dinesh.networkloggerlibrary">
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+
+    <application>
+        <activity android:name="com.dinesh.networklogger.NetworkLoggerDetailsActivity"/>
+
+        <receiver android:name="com.dinesh.networklogger.ShakeReceiver">
+            <intent-filter>
+                <action android:name="shake.detector" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+
+
+</manifest>

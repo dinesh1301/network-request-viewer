@@ -1,0 +1,2 @@
+include ':app', ':networkloggerlibrary'
+rootProject.name='Network Logger'
