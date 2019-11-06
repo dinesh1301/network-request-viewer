@@ -6,11 +6,6 @@
     <application>
         <activity android:name="com.dinesh.networklogger.NetworkLoggerDetailsActivity"/>
 
-        <receiver android:name="com.dinesh.networklogger.ShakeReceiver">
-            <intent-filter>
-                <action android:name="shake.detector" />
-            </intent-filter>
-        </receiver>
 
     </application>
 
