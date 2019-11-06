@@ -19,7 +19,7 @@ class RequestViewHolder(private val view: View): RecyclerView.ViewHolder(view){
             jsonRecyclerView.bindJson(requestVO.body)
         }
         catch (exception: Exception){
-            Log.e(exception)
+            Log.e("error", exception.message?:"")
             jsonRecyclerView.bindJson("{'error':'invalid_json'}")
 
         }
