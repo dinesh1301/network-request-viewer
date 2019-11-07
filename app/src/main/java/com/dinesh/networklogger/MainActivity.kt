@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val api = getRetrofit().create(DummyApi::class.java)
-
+        supportActionBar?.show()
 
         btClickToView.setOnClickListener {
             NetworkLoggerProvider.showNetworkCalls(this)
