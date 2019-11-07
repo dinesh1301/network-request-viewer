@@ -23,6 +23,13 @@ allprojects {
   Init the Viewer in the ```onCreate``` method of your application by writing this line
   ```NetworkLoggerProvider.init(this)```
   
+Add following interceptor to your ```okHttpClient``` like this: 
+```
+val httpClient = OkHttpClient
+            .Builder()
+            .addInterceptor(NetworkLoggerInterceptor())
+```
+  
 Finally, when you want to show the requests screen
 
 ```NetworkLoggerProvider.showNetworkCalls(this)```
