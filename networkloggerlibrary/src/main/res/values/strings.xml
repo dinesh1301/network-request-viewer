@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Network Logger</string>
+    <string name="delete_all_requests">Delete All Requests</string>
+    <string name="delete">Delete</string>
 </resources>
