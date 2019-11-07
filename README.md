@@ -1,5 +1,5 @@
 # network-request-viewer
-It's time to say goodbye to Charles. You can view all the network requests of your app by using this library. Here are the steps
+It's time to say goodbye to Charles. You can view all the network requests **directly in your app** by using this library. Here are the steps
 
 
 Add it in your root build.gradle at the end of repositories:
