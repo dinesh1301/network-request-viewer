@@ -1,10 +1,12 @@
 package com.dinesh.networklogger
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dinesh.networkloggerlibrary.R
@@ -22,6 +24,7 @@ class NetworkLoggerDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_network_logger_details)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
         disposable.add(
             NetworkLoggerProvider
                 .db!!
@@ -37,6 +40,7 @@ class NetworkLoggerDetailsActivity : AppCompatActivity() {
 
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return true
@@ -49,7 +53,7 @@ class NetworkLoggerDetailsActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun deleteRequests() {
+    private fun deleteRequests(): Boolean {
         disposable.add(
         NetworkLoggerProvider.db!!
             .requestLogDao()
@@ -64,6 +68,7 @@ class NetworkLoggerDetailsActivity : AppCompatActivity() {
                     Log.e("error", error.stackTrace.toString())
                 })
         )
+        return true
 
     }
 

@@ -4,7 +4,10 @@
     <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
 
     <application>
-        <activity android:name="com.dinesh.networklogger.NetworkLoggerDetailsActivity"/>
+        <activity
+            android:name="com.dinesh.networklogger.NetworkLoggerDetailsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
 
 
     </application>
