@@ -17,8 +17,8 @@ data class RequestVO(
     @PrimaryKey
     val created: Long = Date().time
 ){
-    constructor(request: Request, response: Response) : this(
-        request.url().encodedPath(), request.method()?:"", request.headers()?.toString() ?:"", response.body()?.string()?:"", response.code()?:0
+    constructor(request: Request, code: Int, responseBody: String) : this(
+        request.url().encodedPath(), request.method()?:"", request.headers()?.toString() ?:"", responseBody, code
     )
 }
 
