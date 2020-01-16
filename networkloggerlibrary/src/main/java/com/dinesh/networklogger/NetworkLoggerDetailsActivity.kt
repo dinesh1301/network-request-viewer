@@ -1,5 +1,6 @@
 package com.dinesh.networklogger
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dinesh.networkloggerlibrary.R
+import com.google.gson.Gson
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -77,10 +79,34 @@ class NetworkLoggerDetailsActivity : AppCompatActivity() {
         val viewManager = LinearLayoutManager(this)
         val viewAdapter = RequestListAdapter(requests)
 
-        findViewById<RecyclerView>(R.id.rvRequests).apply {
+
+        val recyclerView = findViewById<RecyclerView>(R.id.rvRequests).apply {
             setHasFixedSize(true)
             layoutManager = viewManager
             adapter = viewAdapter
         }
+        disposable.add(
+        viewAdapter.getLongClickObservable()
+            .map { view -> recyclerView.getChildLayoutPosition(view) }
+            .map { position -> requests[position] }
+            .subscribe{request -> openShareRequestIntent(request)}
+        )
+
+    }
+
+    private fun openShareRequestIntent(request: RequestVO) {
+        val sendIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, request.id)
+            type="text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+    }
+
+    private fun openRequestDetailActivity(requestId: Int) {
+        val intent = Intent(this, RequestDetailsActivity::class.java)
+        intent.putExtra(REQUEST_ID_KEY, requestId)
+        startActivity(intent)
     }
 }

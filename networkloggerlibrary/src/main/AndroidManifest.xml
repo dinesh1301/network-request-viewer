@@ -8,6 +8,10 @@
             android:name="com.dinesh.networklogger.NetworkLoggerDetailsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             />
+        <activity
+            android:name="com.dinesh.networklogger.RequestDetailsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
 
 
     </application>

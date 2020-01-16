@@ -13,7 +13,7 @@ class NetworkLoggerInterceptor : Interceptor {
         val contentType = response.body()?.contentType()
         val bodyString = response.body()?.string()
         val code = response.code()
-        val requestVO = RequestVO(request, code, bodyString?:"")
+        val requestVO = RequestVO(request, code, bodyString?:"", response.header("requestId"))
         val body = ResponseBody.create(contentType, bodyString?:"")
 
 

@@ -17,4 +17,9 @@ interface RequestLogDao{
 
     @Query("DELETE FROM $TABLE_REQUEST ")
     fun deleteRequests(): Completable
+
+    @Query("SELECT * from $TABLE_REQUEST WHERE ID = :requestId  ORDER BY created DESC ")
+    fun getRequestById(requestId: Int): Observable<List<RequestVO>>
+
+
 }

@@ -1,0 +1,3 @@
+package com.dinesh.networklogger.requestdetails
+
+interface RequestDetails

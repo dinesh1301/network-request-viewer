@@ -14,11 +14,13 @@ data class RequestVO(
     val headers: String,
     val body: String,
     val code: Int,
-    @PrimaryKey
-    val created: Long = Date().time
+    val created: Long = Date().time,
+    val requestId: String? = null,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int=0
 ){
-    constructor(request: Request, code: Int, responseBody: String) : this(
-        request.url().encodedPath(), request.method()?:"", request.headers()?.toString() ?:"", responseBody, code
+    constructor(request: Request, code: Int, responseBody: String, requestId: String? = null) : this(
+        request.url().encodedPath(), request.method()?:"", request.headers()?.toString() ?:"", responseBody, code, requestId = requestId
     )
 }
 
