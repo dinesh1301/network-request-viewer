@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import io.reactivex.Completable
 import io.reactivex.Observable
+import io.reactivex.Single
 
 @Dao
 interface RequestLogDao{
@@ -19,7 +20,7 @@ interface RequestLogDao{
     fun deleteRequests(): Completable
 
     @Query("SELECT * from $TABLE_REQUEST WHERE ID = :requestId  ORDER BY created DESC ")
-    fun getRequestById(requestId: Int): Observable<List<RequestVO>>
+    fun getRequestById(requestId: Int): Single<List<RequestVO>>
 
 
 }
