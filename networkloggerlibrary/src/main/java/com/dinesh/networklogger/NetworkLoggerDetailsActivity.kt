@@ -97,11 +97,11 @@ class NetworkLoggerDetailsActivity : AppCompatActivity() {
     private fun openShareRequestIntent(request: RequestVO) {
         val sendIntent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, request.id)
+            putExtra(Intent.EXTRA_TEXT, request.requestId)
             type="text/plain"
         }
         val shareIntent = Intent.createChooser(sendIntent, null)
-        startActivity(shareIntent)
+        startActivity(sendIntent)
     }
 
     private fun openRequestDetailActivity(requestId: Int) {
