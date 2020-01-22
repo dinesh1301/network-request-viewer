@@ -1,5 +1,5 @@
 # network-request-viewer(Mindtickle)
-(This repository has been slightly modified for custom usecase of Mindtickle) <br />
+(This repository has been slightly modified for custom usecases of Mindtickle branch- ```feature/mindtickle``` ) <br />
 
 It's time to say goodbye to Charles. You can view all the network requests **directly in your app** by using this library. Here are the steps
 
