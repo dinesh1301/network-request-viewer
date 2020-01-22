@@ -7,6 +7,7 @@ It's time to say goodbye to Charles. You can view all the network requests **dir
 - **Press the Volume Button Down twice** to Open the list of requests screen
 - **Click** on any of the requests to see the response
 - **Long Click** on any of the request to share the request ID of this particular request on Slack/Email etc.
+- **Click on Delete** option on top right corner of the screen to delete all of the requests. (Keep doing so frequently to avoid lag)
 
 
 ### Instruction For Developers
