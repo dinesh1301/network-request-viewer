@@ -1,5 +1,15 @@
-# network-request-viewer
+# network-request-viewer(Mindtickle)
+(This repository has been slightly modified for custom usecase of Mindtickle) <br />
+
 It's time to say goodbye to Charles. You can view all the network requests **directly in your app** by using this library. Here are the steps
+
+### Instruction For users
+- **Press the Volume Button Down twice** to Open the list of requests screen
+- **Click** on any of the requests to see the response
+- **Long Click** on any of the request to share the request ID of this particular request on Slack/Email etc.
+
+
+### Instruction For Developers
 
 
 Add it in your root build.gradle at the end of repositories:
@@ -16,7 +26,7 @@ allprojects {
   
   ```
   dependencies {
-	        implementation 'com.github.dinesh-mindtickle:network-request-viewer:0.0.3'
+	        implementation 'com.github.dinesh-mindtickle:network-request-viewer:{version}'
 	}
   ```
   
